@@ -8,7 +8,6 @@ import LoginPage from "./pages/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
-import User from "./pages/User";
 import Employee from "./pages/Employee";
 import Register from "./pages/Register";
 function App() {
@@ -20,7 +19,6 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/user" element={<User />} />
             <Route path="/employee" element={<Employee />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
