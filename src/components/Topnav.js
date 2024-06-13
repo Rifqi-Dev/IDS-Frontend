@@ -15,10 +15,27 @@ import {
 
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import dayjs from "dayjs";
+
 function Topnav() {
   const [user, setUserInfo] = useState({});
   const [loading, setLoading] = useState(true);
   const { auth } = useAuth();
+
+  const now = dayjs();
+  const currentHour = now.hour();
+
+  let greeting;
+
+  if (currentHour >= 5 && currentHour < 12) {
+    greeting = "Good Morning";
+  } else if (currentHour >= 12 && currentHour < 18) {
+    greeting = "Good Afternoon";
+  } else if (currentHour >= 18 && currentHour < 22) {
+    greeting = "Good Evening";
+  } else {
+    greeting = "Good Night";
+  }
   useEffect(() => {
     const fetchInfo = async () => {
       setLoading(true);
@@ -55,7 +72,14 @@ function Topnav() {
   return (
     <>
       <AppBar position="static" sx={{ backgroundColor: "#fefefe" }}>
-        <Toolbar sx={{ display: "flex", justifyContent: "flex-end" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          {loading ? (
+            <Skeleton width={100} />
+          ) : (
+            <Typography sx={{ color: "#000" }} variant="h6">
+              {`${greeting}, ${user.full_name}`}
+            </Typography>
+          )}
           <IconButton color="inherit" onClick={handleMenuOpen}>
             {loading ? (
               <Skeleton variant="circular" width={40} height={40} />
