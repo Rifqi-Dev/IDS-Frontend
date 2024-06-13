@@ -11,7 +11,7 @@ export const Register = async (payload) => {
 };
 
 export const AccessMenus = async () => {
-  return axios.get(API_URL + "/rbac/access_menu", {
+  return axios.get(API_URL + "/user/access_menu", {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   });
 };
