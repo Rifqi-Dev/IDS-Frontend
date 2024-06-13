@@ -8,8 +8,9 @@ import LoginPage from "./pages/LoginPage";
 import { AuthProvider } from "./context/AuthContext";
 import Layout from "./components/Layout";
 import Dashboard from "./pages/Dashboard";
-import Employee from "./pages/Employee";
+import Employee from "./pages/human-resource/Employee";
 import Register from "./pages/Register";
+import EmployeeConfig from "./pages/human-resource/Employee-config";
 function App() {
   return (
     <AuthProvider>
@@ -19,7 +20,14 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/" element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
-            <Route path="/employee" element={<Employee />} />
+            <Route
+              path="/human-resource/employee-management"
+              element={<Employee />}
+            />
+            <Route
+              path="/human-resource/employee-config"
+              element={<EmployeeConfig />}
+            />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

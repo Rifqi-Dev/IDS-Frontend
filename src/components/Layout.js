@@ -10,8 +10,7 @@ function Layout() {
   const { auth } = useAuth();
 
   useEffect(() => {
-    console.log(auth);
-    if (!auth.isAuthenticated) navigate("/login");
+    if (!localStorage.getItem("token")) navigate("/login");
   }, [auth, navigate]);
   if (!auth.isAuthenticated) return <></>;
   return (

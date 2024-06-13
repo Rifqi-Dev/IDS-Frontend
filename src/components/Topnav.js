@@ -122,9 +122,12 @@ function Topnav() {
           </Typography>
         </Box>
         <Divider />
-        <MenuItem onClick={() => console.log("Edit Profile")}>
-          Edit Profile
-        </MenuItem>
+        {user.role !== "Guest" && (
+          <MenuItem onClick={() => console.log("Edit Profile")}>
+            Edit Profile
+          </MenuItem>
+        )}
+
         <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </>
