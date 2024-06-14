@@ -123,9 +123,7 @@ function Topnav() {
         </Box>
         <Divider />
         {user.role !== "Guest" && (
-          <MenuItem onClick={() => console.log("Edit Profile")}>
-            Edit Profile
-          </MenuItem>
+          <MenuItem onClick={() => navigate("/profile")}>Edit Profile</MenuItem>
         )}
 
         <MenuItem onClick={handleLogout}>Logout</MenuItem>

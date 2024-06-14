@@ -12,6 +12,7 @@ import Employee from "./pages/human-resource/Employee";
 import Register from "./pages/Register";
 import Role from "./pages/human-resource/Role";
 import Location from "./pages/human-resource/Location";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
               path="/human-resource/location-management"
               element={<Location />}
             />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
