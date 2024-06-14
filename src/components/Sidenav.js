@@ -20,7 +20,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import EmojiPeopleOutlinedIcon from "@mui/icons-material/EmojiPeopleOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import AssignmentIndOutlinedIcon from "@mui/icons-material/AssignmentIndOutlined";
 
 const icons = {
   "/": <HomeOutlinedIcon fontSize="small" />,
@@ -28,8 +29,11 @@ const icons = {
   "/human-resource/employee-management": (
     <PeopleAltOutlinedIcon fontSize="small" />
   ),
-  "/human-resource/employee-config": (
-    <ManageAccountsOutlinedIcon fontSize="small" />
+  "/human-resource/role-management": (
+    <AssignmentIndOutlinedIcon fontSize="small" />
+  ),
+  "/human-resource/location-management": (
+    <LocationOnOutlinedIcon fontSize="small" />
   ),
 };
 

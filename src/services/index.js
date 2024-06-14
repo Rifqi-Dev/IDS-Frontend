@@ -21,3 +21,12 @@ export const GetProfile = async () => {
     headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   });
 };
+
+export const GetRole = async (page, pageSize, keyword) => {
+  return axios.get(API_URL + "/role/", {
+    params: { page: page, pageSize: pageSize, keyword: keyword },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
