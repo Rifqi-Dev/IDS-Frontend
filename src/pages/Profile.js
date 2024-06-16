@@ -3,7 +3,7 @@ import {
   Box,
   Card,
   CardContent,
-  CardHeader,
+  MenuItem,
   Button,
   TextField,
   Typography,
@@ -179,8 +179,8 @@ function Profile() {
                   value={profileData.gender}
                   onChange={handleInputChange}
                 >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
+                  <MenuItem value="Male">Male</MenuItem>
+                  <MenuItem value="Female">Female</MenuItem>
                 </TextField>
                 <Button
                   type="submit"

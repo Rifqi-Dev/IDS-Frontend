@@ -102,3 +102,76 @@ export const Deletelocation = async (id) => {
     },
   });
 };
+
+export const GetEmployee = async (page, pageSize, keyword) => {
+  return axios.get(API_URL + "/employee", {
+    params: {
+      page: page,
+      pageSize: pageSize,
+      keyword: keyword,
+    },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+export const CreateEmployee = async (payload) => {
+  return axios.post(API_URL + "/employee", payload, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+export const EditEmployee = async (payload) => {
+  return axios.put(API_URL + "/employee", payload, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+export const DeleteEmployee = async (id) => {
+  return axios.delete(API_URL + "/employee", {
+    params: {
+      id: id,
+    },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+export const searchUser = async (keyword) => {
+  return axios.get(API_URL + "/user/list", {
+    params: {
+      keyword: keyword,
+    },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+export const searchLocation = async (keyword) => {
+  return axios.get(API_URL + "/location/list", {
+    params: {
+      keyword: keyword,
+    },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
+
+export const searchRole = async (keyword) => {
+  return axios.get(API_URL + "/role/list", {
+    params: {
+      keyword: keyword,
+    },
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+};
